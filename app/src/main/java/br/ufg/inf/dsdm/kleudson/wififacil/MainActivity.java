@@ -3,6 +3,7 @@ package br.ufg.inf.dsdm.kleudson.wififacil;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class MainActivity extends AppCompatActivity {
 
     boolean redeEncontrada = true;
+    private Toolbar mToolbar;
 
 //    private Button buttonConectar;
 
@@ -41,8 +43,25 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.tbMain);
+        mToolbar.setTitle("WiFi Fácil");
+        mToolbar.setLogo(R.drawable.ic_logo);
+/*        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem){
+                Intent intent = null;
+                switch (menuItem.getItemId()){
+                    case R.id.plus:
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://www.facebook.com"));
+                    break;
+                }
+
+                return  true;
+            }
+        });*/
+        setSupportActionBar(mToolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     ssid = ssid.substring(7, ssid.length());
                     senha = conteudoComSplit[2];
                     senha = senha.substring(2, senha.length());
-                    Toast.makeText(this, "Conteúdo: " + result.getContents(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(this, "Conteúdo: " + result.getContents(), Toast.LENGTH_LONG).show();
 
                     Connection(ssid,senha);
 
@@ -166,7 +185,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.plus) {
+            Intent intent = new Intent(this, ActCadastro.class);
+            startActivity(intent);
             return true;
         }
 

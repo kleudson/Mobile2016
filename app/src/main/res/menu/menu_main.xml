@@ -2,9 +2,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.ufg.inf.dsdm.kleudson.wififacil.MainActivity">
-    <item
+<!--    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
+
+    <item
+        android:id="@+id/plus"
+        android:orderInCategory="100"
+        android:title="Mais"
+        android:icon="@drawable/plus"
+        app:showAsAction="always"
+        />
+
 </menu>
