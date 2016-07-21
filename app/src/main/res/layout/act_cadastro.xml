@@ -26,15 +26,20 @@
                 android:id="@+id/tbMain"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="@drawable/toolbar_rounded_corners"
                 android:elevation="4dp"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
-
         </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></LinearLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
             <EditText
                 android:layout_width="match_parent"
