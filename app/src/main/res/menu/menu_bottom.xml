@@ -1,0 +1,18 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_salvar"
+        android:orderInCategory="100"
+        android:icon="@drawable/content_save"
+        android:title="@string/action_salvar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_email"
+        android:orderInCategory="100"
+        android:icon="@drawable/email_outline"
+        android:title="@string/action_email"
+        app:showAsAction="always" />
+</menu>

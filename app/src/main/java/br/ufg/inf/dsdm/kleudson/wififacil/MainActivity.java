@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else {
                 wifiManager.enableNetwork(networkId, true);
-                Toast.makeText(getApplicationContext(), "Conectado na rede '" + ssid + "' com Sucesso!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Tentando autenticar na rede: " + ssid, Toast.LENGTH_LONG).show();
             }
     }
 
