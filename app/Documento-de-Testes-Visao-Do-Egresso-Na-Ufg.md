@@ -123,9 +123,9 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 
 **CT-4. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados incorretos.**
  
- |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
- |-------------|-------------|------------|-------|---------|
- |CT-4.1|Tabela EGRESSO existente.|Realiza a inserção de dados de egresso com todos os dados validos e campos obrigatorios.| INSERT INTO EGRESSO (ID, NOME, NOME_MAE, DATA_NASCIMENTO, FOTO_PRINCIPAL, FOTO_ADICIONAIS, VISIBILIDADE, SEXO) VALUES (2, Kleudson Rodrigues de Souza, 'Aparecida Pereira de Souza', '24-01-2010', E'\\xDEADCEEF', null, 'publico', 'masculino')|true|
+|Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
+|-------------|-------------|------------|-------|---------|
+|CT-4.1|Tabela EGRESSO existente.|Realiza a inserção de dados de egresso com todos os dados validos e campos obrigatorios.| INSERT INTO EGRESSO (ID, NOME, NOME_MAE, DATA_NASCIMENTO, FOTO_PRINCIPAL, FOTO_ADICIONAIS, VISIBILIDADE, SEXO) VALUES (2, Kleudson Rodrigues de Souza, 'Aparecida Pereira de Souza', '24-01-2010', E'\\xDEADCEEF', null, 'publico', 'masculino')|true|
 |CT-4.2|Tabela RESIDENCIA existente.|Realiza inserção de dados de uma residencia com todos os dados validos, campos obrigatorios e campos opcionais|INSERT INTO RESIDENCIA (DATA_INICIO, DATA_FIM, ENDERECO) VALUES ('14-12-2016', '15-12-2016', Av. Floresta, Qd. 15 Lt. 16)|true|
 |CT-4.3|Tabela LOCALIZACAO_GEOGRAFICA existente.|Realiza inserção de dados em na tabela localizacao_geografica com todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO LOCALIZACAO_GEOGRAFICA (ID, NOME_CIDADE, NOME_UNIDADE_FEDERATIVA, NOME_PAIS, SIGLA, LATITUDE, LONGITUDE) VALUES ('1', Goiânia, 'Goiás', 'Brasil', 'BR', '-16.603402', '-49.266637')|true|
 |CT-4.4|Tabela AREA_DE_CONHECIMENTO existente.|Realiza a inserção de dados na ta tabela area_de_conhecimento com todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO AREA_DE_CONHECIMENTO (NOME, CODIGO, SUPER_AREA) VALUES (Informática, 1, 1)|true|
