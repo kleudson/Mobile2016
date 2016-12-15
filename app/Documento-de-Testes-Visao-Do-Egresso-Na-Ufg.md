@@ -72,9 +72,8 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |CT-2.8|Tabela AVALIACAO_DO_CURSO_PELO_EGRESSO existente.|Realiza inserção de dados da avaliação do curso pelo egresso de todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO AVALIACAO_DO_CURSO_PELO_EGRESSO (HISTORICO, DATA_AVALIACAO, MOTIVACAO_ESCOLHA, SATISFACAO_CURSO, CONCEITO_GLOBAL_CURSO, PREPARACAO_PARA_MERCADO, MELHORIA_CAPACIDADE_COMUNICACAO, CAPACIDADE_ETICA_RESPONSABILIADE, CAPACIDADE_HABILIDADES_AREA_CONHECIMENTO, COMENTARIO) VALUES (201392248, '01-12-2016', 'Qualidade/Reputacao do Curso', 10, 10, 10, 10, 10, 10, 'Comentário sobre o curso de Engenharia de Software')|true|
 |CT-2.9|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção de dados da realização do programa acadêmico com todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
 
-#### 3.3.3 Entradas Inválidas
- 
- **CT-3. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados faltantes.**
+#### 3.3.3 Entradas Inválidas 
+**CT-3. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados faltantes.**
  
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
