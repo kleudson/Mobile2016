@@ -49,14 +49,14 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
 |CT-1.1|Banco de dados funcionando corretamente.|Verifica se a tabela referente aos dados do egresso de PessoaEgres.|SELECT * FROM EGRESSO| true|
-|CT-1.2| * | Verifica se a tabela referente A PessoaEgres existe.|SELECT * FROM RESIDENCIA| true|
-|CT-1.3| * | Verifica se a tabela referente a localização geográfica existe.|SELECT * FROM LOCALIZACAO_GEOGRAFICA | true|
-|CT-1.4|* |Verifica se a tabela referente a área de conhecimento existe.|SELECT * FROM AREA_DE_CONHECIMENTO| true|
-|CT-1.5| * | Verifica se a tabela referente a unidade acadêmica existe.|SELECT * FROM UNIDADE_ACADEMICA| true|
-|CT-1.6| * | Verifica se a tabela referente ao curso da ufg existe.| SELECT * FROM CURSO_DA_UFG|true|
-|CT-1.7| * | Verifica se a tabela referente histórico na ufg existe.|SELECT * FROM HISTORICO_NA_UFG| true|
-|CT-1.8| *| Verifica se a tabela referente a a avaliação do cursos por parte do egresso existe.|SELECT * FROM AVALIACAO_DO_CURSO_PELO_EGRESSO|true|
-|CT-1.9|*|Verifica se a tabela referente a realização de programas acadêmicos existe.|SELECT * FROM REALIZACAO_DE_PROGRAMA_ACADEMICO|true|
+|CT-1.2| Banco de dados funcionando corretamente. | Verifica se a tabela referente A PessoaEgres existe.|SELECT * FROM RESIDENCIA| true|
+|CT-1.3| Banco de dados funcionando corretamente. | Verifica se a tabela referente a localização geográfica existe.|SELECT * FROM LOCALIZACAO_GEOGRAFICA | true|
+|CT-1.4|Banco de dados funcionando corretamente. |Verifica se a tabela referente a área de conhecimento existe.|SELECT * FROM AREA_DE_CONHECIMENTO| true|
+|CT-1.5| Banco de dados funcionando corretamente. | Verifica se a tabela referente a unidade acadêmica existe.|SELECT * FROM UNIDADE_ACADEMICA| true|
+|CT-1.6| Banco de dados funcionando corretamente. | Verifica se a tabela referente ao curso da ufg existe.| SELECT * FROM CURSO_DA_UFG|true|
+|CT-1.7| Banco de dados funcionando corretamente. | Verifica se a tabela referente histórico na ufg existe.|SELECT * FROM HISTORICO_NA_UFG| true|
+|CT-1.8| Banco de dados funcionando corretamente. Verifica se a tabela referente a a avaliação do cursos por parte do egresso existe.|SELECT * FROM AVALIACAO_DO_CURSO_PELO_EGRESSO|true|
+|CT-1.9Banco de dados funcionando corretamente.Verifica se a tabela referente a realização de programas acadêmicos existe.|SELECT * FROM REALIZACAO_DE_PROGRAMA_ACADEMICO|true|
  
  **CT-2. Conjunto de testes para verificar se as tabelas estão aceitando os dados validos corretamente, e com entradas com todos os campos obrigatorios e opcionais**
  
@@ -115,3 +115,8 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |CT-3.36|Tabela AVALIACAO_DO_CURSO_PELO_EGRESSO existente.|Realiza inserção de dados de avaliação do curso com a melhoria da capacidade de comunicação faltando.| INSERT INTO AVALIACAO_DO_CURSO_PELO_EGRESSO (HISTORICO, DATA_AVALIACAO, SATISFACAO_CURSO, MOTIVACAO_ESCOLHA, CONCEITO_GLOBAL_CURSO, PREPARACAO_PARA_MERCADO, CAPACIDADE_ETICA_RESPONSABILIADE, CAPACIDADE_HABILIDADES_AREA_CONHECIMENTO, COMENTARIO) VALUES (201392248, '01-12-2016', 'Qualidade/Reputacao do Curso', 10, 10, 10, 10, 10, 'Comentário sobre o curso de Engenharia de Software')|true|
 |CT-3.37|Tabela AVALIACAO_DO_CURSO_PELO_EGRESSO existente.|Realiza inserção de dados de avaliação do curso com a capacidade ética faltando.| INSERT INTO AVALIACAO_DO_CURSO_PELO_EGRESSO (HISTORICO, DATA_AVALIACAO, SATISFACAO_CURSO, MOTIVACAO_ESCOLHA, CONCEITO_GLOBAL_CURSO, PREPARACAO_PARA_MERCADO, MELHORIA_CAPACIDADE_COMUNICACAO, CAPACIDADE_HABILIDADES_AREA_CONHECIMENTO, COMENTARIO) VALUES (201392248, '01-12-2016', 'Qualidade/Reputacao do Curso', 10, 10, 10, 10, 10, 'Comentário sobre o curso de Engenharia de Software')|true|
 |CT-3.38|Tabela AVALIACAO_DO_CURSO_PELO_EGRESSO existente.|Realiza inserção de dados de avaliação do curso com a capacidade de habilidades da área de conhecimento faltando.| INSERT INTO AVALIACAO_DO_CURSO_PELO_EGRESSO (HISTORICO, DATA_AVALIACAO, SATISFACAO_CURSO, MOTIVACAO_ESCOLHA, CONCEITO_GLOBAL_CURSO, PREPARACAO_PARA_MERCADO, MELHORIA_CAPACIDADE_COMUNICACAO, CAPACIDADE_ETICA_RESPONSABILIADE, COMENTARIO) VALUES (201392248, '01-12-2016', 'Qualidade/Reputacao do Curso', 10, 10, 10, 10, 10, 'Comentário sobre o curso de Engenharia de Software')|true|
+|CT-3.39|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde o histórico está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (TIPO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES ('Iniciacao_Cientifica', '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
+|CT-3.40|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde o tipo está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES (201392248, '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
+|CT-3.41|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde o histórico está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
+|CT-3.42|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde a data de início está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
+|CT-3.43|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde a data de fim está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', 'Descrição do Programa Acadêmico')|true|
