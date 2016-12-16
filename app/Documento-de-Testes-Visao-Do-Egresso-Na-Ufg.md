@@ -1,31 +1,31 @@
 # Documento de Procedimentos - (Visão do Egresso na UFG)
- 
+  
 ## 1. Descrição do Artefato
 |Artefato Avaliado| Descrição do Artefato |
 |-----------------|-----------------------|
 |DDl Visao do Egresso na UFG|Implementação da DDL que integra os RD's: PessoaEgres e CursUfgEgres, que formam a visão de Egresso na UFG|
-
+ 
 ## 2. Critérios de Coberturas dos Testes
 - Os testes implementados devem garantir que a DDL que implementa o requisito de dados está correta.
 - Todas as implementações devem ser testadas.
 - Os testes devem ser aprovados independentemente do banco de dados utilziado (MariaDb e Postgres).
 - O artefato testado deve conter todos os dados necessários para a execução dos testes, bem como corresponder a especificação de requisitos.
-
+ 
 ## 3. Especificação dos Testes
 Nesta parte do documento devem ser descritos os procedimentos e os casos de teste a serem aplicados. Dar um identificador para o conjunto de testes
-
+ 
 ### 3.1 Recursos
 |Codigo|Descrição|Localização|Aplicabilidade|
 |------|---------|-----------|--------------|
 |RC1|Kleudson|Time de desenvolvimento|Responsável por executar os testes.|
 |RC2|Script DML com todos os comandos utilizados nos testes para testar a DDL que integra a visão do egresso no sistema SempreUFG.|.\Sempre-UFG\db\|Testes manuais de banco de dados.|
-
+ 
 ### 3.2 Procedimentos
 - O diagrama de entidade e relacionamento definido no documento de Requisitos do Software SempreUFG é a base de criação dos casos de testes.
 - O casos de testes foram aplicados na DDL que integra a visão do egresso na ufg disponibilizada no respositório do projeto, realizando a execução dos testes e coletando seus resultados.
 - Os resultados coletados e analisados foram descritos no relatorio que descreve os resultados dos procedimentos.
 - Os testes foram executados manualmente.
-
+ 
 ### 3.3 Casos de Testes
 #### 3.3.1 CheckList de Qualidade
 Padrões simples que vão deixar a base de dados organizada e de fácil entendimento. Focando em melhorar a qualidade das estruturas de dados de uma maneira simples e eficiente.
@@ -42,10 +42,10 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 - Separe os nomes com underline;
 - Crie nomes sucintos e objetivos;
 - O nome não pode ter várias interpretações;
- 
+  
 #### 3.3.2 Entradas Válidas
 **CT-1 . Conjunto de testes para verificar se as tabelas estão criadas no Banco de dados**
- 
+  
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
 |CT-1.1|Banco de dados funcionando corretamente.|Verifica se a tabela referente aos dados do egresso de PessoaEgres.|SELECT * FROM EGRESSO| true|
@@ -57,9 +57,9 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |CT-1.7| Banco de dados funcionando corretamente. | Verifica se a tabela referente histórico na ufg existe.|SELECT * FROM HISTORICO_NA_UFG| true|
 |CT-1.8| Banco de dados funcionando corretamente. Verifica se a tabela referente a a avaliação do cursos por parte do egresso existe.|SELECT * FROM AVALIACAO_DO_CURSO_PELO_EGRESSO|true|
 |CT-1.9Banco de dados funcionando corretamente.Verifica se a tabela referente a realização de programas acadêmicos existe.|SELECT * FROM REALIZACAO_DE_PROGRAMA_ACADEMICO|true|
- 
- **CT-2. Conjunto de testes para verificar se as tabelas estão aceitando os dados validos corretamente, e com entradas com todos os campos obrigatorios e opcionais**
- 
+  
+**CT-2. Conjunto de testes para verificar se as tabelas estão aceitando os dados validos corretamente, e com entradas com todos os campos obrigatorios e opcionais**
+  
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
 |CT-2.1|Tabela EGRESSO existente.|Realiza a inserção de dados de egresso com todos os dados validos e campos obrigatorios.| INSERT INTO EGRESSO (ID, NOME, NOME_MAE, DATA_NASCIMENTO, FOTO_PRINCIPAL, FOTO_ADICIONAIS, VISIBILIDADE, SEXO) VALUES (2, 'Kleudson Rodrigues de Souza', 'Aparecida Pereira de Souza', '24-01-2010', E'\\xDEADCEEF', null, 'publico', 'masculino')|true|
@@ -71,10 +71,10 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |CT-2.7|Tabela HISTORICO_NA_UFG existente.|Realiza a inserção de dados na tabela histórico na ufg, campos obrigatorios e campos opcionais.|INSERT INTO HISTORICO_NA_UFG (NUMERO_MATRICULA_CURSO, MES_DE_INICIO, ANO_DE_INICIO, MES_DE_FIM, ANO_DE_FIM, TITULO_DO_TRABALHO_FINAL, CURSO, ID_EGRESSO) VALUES (201392248, 01, 2011, 12, 2016, 'A Engenharia de Software no Dia-a-Dia', 1, 1)|true|
 |CT-2.8|Tabela AVALIACAO_DO_CURSO_PELO_EGRESSO existente.|Realiza inserção de dados da avaliação do curso pelo egresso de todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO AVALIACAO_DO_CURSO_PELO_EGRESSO (HISTORICO, DATA_AVALIACAO, MOTIVACAO_ESCOLHA, SATISFACAO_CURSO, CONCEITO_GLOBAL_CURSO, PREPARACAO_PARA_MERCADO, MELHORIA_CAPACIDADE_COMUNICACAO, CAPACIDADE_ETICA_RESPONSABILIADE, CAPACIDADE_HABILIDADES_AREA_CONHECIMENTO, COMENTARIO) VALUES (201392248, '01-12-2016', 'Qualidade/Reputacao do Curso', 10, 10, 10, 10, 10, 10, 'Comentário sobre o curso de Engenharia de Software')|true|
 |CT-2.9|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção de dados da realização do programa acadêmico com todos os dados validos, campos obrigatorios e campos opcionais.|INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
-
+ 
 #### 3.3.3 Entradas Inválidas 
 **CT-3. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados faltantes.**
- 
+  
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
 |CT-3.1|Tabela EGRESSO existente.|Realiza a inserção de dados de um EGRESSO com id faltando.| INSERT INTO EGRESSO (NOME, NOME_MAE, DATA_NASCIMENTO, FOTO_PRINCIPAL, FOTO_ADICIONAIS, VISIBILIDADE, SEXO) VALUES ('Kleudson Rodrigues de Souza', 'Aparecida Pereira de Souza', '24-01-2010', E'\\xDEADCEEF', null, 'publico', 'masculino')|true|
@@ -120,9 +120,9 @@ Padrões simples que vão deixar a base de dados organizada e de fácil entendim
 |CT-3.41|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde o histórico está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
 |CT-3.42|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde a data de início está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_FIM, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-01-2017', 'Descrição do Programa Acadêmico')|true|
 |CT-3.43|Tabela REALIZACAO_DE_PROGRAMA_ACADEMICO existente.|Realiza inserção na coluna realização de programa acadêmico onde a data de fim está faltando.| INSERT INTO REALIZACAO_DE_PROGRAMA_ACADEMICO (HISTORICO, TIPO, DATA_INICIO, DESCRICAO) VALUES (201392248, 'Iniciacao_Cientifica', '02-12-2016', 'Descrição do Programa Acadêmico')|true|
-
-**CT-4. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados incorretos.**
  
+**CT-4. Conjunto de testes para verificar se as tabelas estão sendo tratadas para não receber dados incorretos.**
+  
 |Caso de Teste|Pré-condições|Descrição|Entrada|Resultado Esperado|
 |-------------|-------------|------------|-------|---------|
 |CT-4.1|Tabela EGRESSO existente.|Realiza a inserção de dados de um egresso com campos incorretos.| INSERT INTO EGRESSO (ID, NOME, NOME_MAE, DATA_NASCIMENTO, FOTO_PRINCIPAL, FOTO_ADICIONAIS, VISIBILIDADE, SEXO) VALUES (2, Kleudson Rodrigues de Souza, 'Aparecida Pereira de Souza', '24-01-2010', E'\\xDEADCEEF', null, 'publico', 'masculino')|true|
